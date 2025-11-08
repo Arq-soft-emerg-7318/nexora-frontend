@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. María González",
+    "title": "Ingeniera de Minas",
+    "email": "maria.gonzalez@email.com",
+    "avatar": "https://i.pravatar.cc/100?img=1",
+    "posts": 234,
+    "aiPosts": 234,
+    "since": "ago 2024"
+  },
+  {
+    "id": 2,
+    "name": "Ing. Carlos Pérez",
+    "title": "Data Scientist",
+    "email": "carlos.perez@email.com",
+    "avatar": "https://i.pravatar.cc/100?img=12",
+    "posts": 128,
+    "aiPosts": 54,
+    "since": "jun 2024"
+  }
+]

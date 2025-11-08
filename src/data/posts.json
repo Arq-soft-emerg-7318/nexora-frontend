@@ -1,0 +1,28 @@
+[
+  {
+    "id": 1,
+    "title": "Nuevas técnicas de extracción sostenible en minas de cobre",
+    "excerpt": "Un análisis profundo sobre las últimas innovaciones en minería sostenible que están revolucionando la industria…",
+    "likes": 234,
+    "comments": 45,
+    "timeAgo": "Hace 2 horas",
+    "author": {
+      "name": "Dr. María González",
+      "title": "Ingeniera de Minas",
+      "avatar": "https://i.pravatar.cc/100?img=1"
+    }
+  },
+  {
+    "id": 2,
+    "title": "Optimización predictiva con IA en operaciones subterráneas",
+    "excerpt": "Cómo los modelos de machine learning reducen costos y riesgos en escenarios complejos…",
+    "likes": 128,
+    "comments": 22,
+    "timeAgo": "Hace 5 horas",
+    "author": {
+      "name": "Ing. Carlos Pérez",
+      "title": "Data Scientist",
+      "avatar": "https://i.pravatar.cc/100?img=12"
+    }
+  }
+]
