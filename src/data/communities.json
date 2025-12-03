@@ -1,0 +1,4 @@
+[
+  { "id": 1, "name": "Minería y Metalurgia", "description": "Comunidad sobre minería", "userId": 10 },
+  { "id": 2, "name": "IA en Industria", "description": "IA aplicada a industria", "userId": 11 }
+]

@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-white text-neutral-900 flex flex-col">
-    <header class="h-[72px] flex items-center border-b border-neutral-200">
+    <header v-if="showHeader" class="h-[72px] flex items-center border-b border-neutral-200">
       <div class="mx-auto w-full max-w-6xl px-6 flex items-center gap-6">
         <div class="flex items-center gap-3 font-semibold text-sm">
           <img :src="logoUrl" alt="Nexora Logo" class="w-9 h-9 rounded-2xl object-cover" />
@@ -15,9 +15,9 @@
         </div>
       </div>
     </header>
-    <main class="flex-1 px-6 py-10 mx-auto w-full max-w-6xl">
-      <!-- Pastilla centrada debajo del header, como en el mock -->
-      <div class="w-full flex justify-center mb-10">
+    <main :class="['', isCreateProfile ? '' : 'px-6 py-10']">
+      <!-- Pastilla centrada debajo del header, como en el mock. Oculta en create-profile -->
+      <div v-if="showTabs" class="w-full flex justify-center mb-10">
         <SegmentedTabs :tabs="tabs" v-model="activeTab" @change="onTabChange" />
       </div>
       <slot />
@@ -26,12 +26,16 @@
 </template>
 
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, computed } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
 import SegmentedTabs from '../components/SegmentedTabs.vue'
 
 const router = useRouter()
 const route = useRoute()
+
+const showTabs = computed(() => route.name !== 'create-profile')
+const showHeader = computed(() => route.name !== 'create-profile')
+const isCreateProfile = computed(() => route.name === 'create-profile')
 
 // Assets
 const logoUrl = new URL('../assets/images/logo.png', import.meta.url).href
@@ -55,6 +59,9 @@ function onTabChange(key){
 }
 
 function logout(){
+  // limpiar estado local y redirigir a login
+  localStorage.removeItem('accessToken')
+  localStorage.removeItem('profileCreated')
   router.push('/login')
 }
 </script>
